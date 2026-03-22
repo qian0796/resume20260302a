@@ -3,165 +3,242 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>個人履歷 | AU114055014</title>
+<title>個人履歷 | 林潘芮芊</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500;700&display=swap" rel="stylesheet">
 <style>
-body{
-    margin:0;
-    font-family: "Noto Sans TC", sans-serif;
-    background:#f5f5f5;
-    color:#333;
-}
-header{
-    background:#111;
-    color:white;
-    padding:40px;
-    text-align:center;
-}
-/* 履歷照片 */
-.profile-photo {
-    width:150px;
-    height:150px;
-    border-radius:50%;
-    object-fit:cover;
-    border:4px solid white;
-    margin-bottom:15px;
-    background-color:#444; /* 空白圓形底色 */
-    display:inline-block;
-}
-header h1{
-    margin:0;
-    font-size:36px;
-}
-header p{
-    opacity:0.8;
-}
-.container{
-    width:90%;
-    max-width:1000px;
-    margin:auto;
-}
-section{
-    margin:50px 0;
-}
-h2{
-    border-left:6px solid #333;
-    padding-left:10px;
-}
-.card{
-    background:white;
-    padding:20px;
-    margin-top:15px;
-    border-radius:10px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
-.skills span{
-    display:inline-block;
-    background:#222;
-    color:white;
-    padding:6px 12px;
-    margin:5px;
-    border-radius:20px;
-    font-size:14px;
-}
-.portfolio{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:15px;
-}
-.portfolio div{
-    background:#ddd;
-    height:150px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:10px;
-    font-size:14px;
-}
-button{
-    background:#111;
-    color:white;
-    border:none;
-    padding:10px 20px;
-    border-radius:6px;
-    cursor:pointer;
-}
-button:hover{
-    background:#444;
-}
-footer{
-    text-align:center;
-    padding:30px;
-    color:#777;
-}
+    :root {
+        --primary-bg: #fdf6f0; /* 暖米色背景 */
+        --accent-color: #d8c3a5; /* 莫蘭迪棕 */
+        --secondary-color: #8e8d8a; /* 質感灰 */
+        --text-dark: #474747;
+        --white: #ffffff;
+    }
+
+    body {
+        margin: 0;
+        font-family: 'Noto Sans TC', sans-serif;
+        background-color: var(--primary-bg);
+        color: var(--text-dark);
+        line-height: 1.6;
+    }
+
+    /* 仿範例圖的非對稱裝飾背景 */
+    .bg-shape {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 40%;
+        height: 100%;
+        background: var(--accent-color);
+        clip-path: ellipse(80% 100% at 0% 50%);
+        z-index: -1;
+        opacity: 0.3;
+    }
+
+    .main-wrapper {
+        display: flex;
+        max-width: 1100px;
+        margin: 40px auto;
+        background: var(--white);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    /* 左側欄位 */
+    .sidebar {
+        flex: 1;
+        background: #f9f4f0;
+        padding: 50px 40px;
+        text-align: center;
+    }
+
+    .profile-photo {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 8px solid var(--white);
+        margin-bottom: 25px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        background-color: #e0e0e0;
+    }
+
+    .sidebar h2 {
+        font-size: 1.2rem;
+        border-bottom: 2px solid var(--accent-color);
+        display: inline-block;
+        margin-bottom: 20px;
+        padding-bottom: 5px;
+    }
+
+    .info-list {
+        text-align: left;
+        font-size: 0.9rem;
+        margin-top: 30px;
+    }
+
+    .info-list p { margin: 10px 0; }
+
+    /* 右側主要內容 */
+    .content {
+        flex: 2;
+        padding: 60px;
+    }
+
+    header {
+        margin-bottom: 40px;
+    }
+
+    header h1 {
+        font-size: 3rem;
+        margin: 0;
+        letter-spacing: 5px;
+        color: #333;
+        text-transform: uppercase;
+    }
+
+    header .job-title {
+        font-size: 1.2rem;
+        color: var(--secondary-color);
+        letter-spacing: 2px;
+    }
+
+    section { margin-bottom: 40px; }
+
+    h3 {
+        font-size: 1.4rem;
+        color: var(--text-dark);
+        border-left: 4px solid var(--accent-color);
+        padding-left: 15px;
+        margin-bottom: 20px;
+    }
+
+    /* 技能標籤優化 */
+    .skills span {
+        display: inline-block;
+        background: var(--accent-color);
+        color: white;
+        padding: 6px 16px;
+        margin: 0 8px 8px 0;
+        border-radius: 50px;
+        font-size: 0.85rem;
+    }
+
+    /* 作品集格狀排版 */
+    .portfolio {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .portfolio-item {
+        background: #f0f0f0;
+        height: 120px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s;
+        border: 1px dashed #ccc;
+        color: #888;
+    }
+
+    .portfolio-item:hover {
+        background: var(--accent-color);
+        color: white;
+        transform: translateY(-5px);
+    }
+
+    button {
+        background: #333;
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover { background: var(--accent-color); }
+
+    @media (max-width: 850px) {
+        .main-wrapper { flex-direction: column; margin: 0; border-radius: 0; }
+        .bg-shape { display: none; }
+    }
 </style>
 </head>
 <body>
-<header>
-  <!-- 安全照片區域 -->
-  <img id="profilePic" class="profile-photo" src="photo.jpg" alt="林潘芮芊 照片">
-  <h1>個人履歷</h1>
-  <p>亞洲大學 室內設計學系 | 學號 AU114055014</p>
-</header>
-<div class="container">
-<section>
-  <h2>基本資料</h2>
-  <div class="card">
-    <p><b>姓名：</b>林潘芮芊</p>
-    <p><b>學校：</b>亞洲大學 室內設計學系</p>
-    <p><b>學號：</b>AU114055014</p>
-    <p><b>Email：</b>rachel.pan2007@gmail.com</p>
-    <p><b>電話：</b>09xx-xxx-xxx</p>
-  </div>
-</section>
-<section>
-  <h2>關於我</h2>
-  <div class="card">
-    <p>我是亞洲大學室內設計系學生，對空間設計與美感規劃有濃厚興趣。
-    喜歡從生活觀察中尋找靈感，並將設計與使用者體驗結合。
-    未來希望能在室內設計或空間規劃領域持續發展。
-    </p>
-  </div>
-</section>
-<section>
-  <h2>技能</h2>
-  <div class="card skills">
-    <span>AutoCAD</span>
-    <span>SketchUp</span>
-    <span>3D建模</span>
-    <span>空間設計</span>
-    <span>手繪草圖</span>
-    <span>設計思考</span>
-  </div>
-</section>
-<section>
-  <h2>作品集</h2>
-  <div class="portfolio">
-    <div>作品 1</div>
-    <div>作品 2</div>
-    <div>作品 3</div>
-    <div>作品 4</div>
-  </div>
-</section>
-<section>
-  <h2>聯絡我</h2>
-  <div class="card">
-    <p>如果對我的作品有興趣，歡迎聯絡我。</p>
-    <button onclick="showMessage()">點擊聯絡</button>
-    <p id="msg"></p>
-  </div>
-</section>
+
+<div class="bg-shape"></div>
+
+<div class="main-wrapper">
+    <div class="sidebar">
+        <img id="profilePic" class="profile-photo" src="photo.jpg" alt="林潘芮芊">
+        
+        <h2>ABOUT ME</h2>
+        <p style="font-size: 0.9rem; text-align: justify; color: #666;">
+            我是亞洲大學室內設計系學生，對空間設計與美感規劃有濃厚興趣。喜歡從生活觀察中尋找靈感，將設計與使用者體驗結合。
+        </p>
+
+        <div class="info-list">
+            <h2>CONTACT</h2>
+            <p><b>Email:</b><br>rachel.pan2007@gmail.com</p>
+            <p><b>Phone:</b><br>09xx-xxx-xxx</p>
+            <p><b>ID:</b><br>AU114055014</p>
+        </div>
+    </div>
+
+    <div class="content">
+        <header>
+            <h1>林潘芮芊</h1>
+            <div class="job-title">INTERIOR DESIGN STUDENT</div>
+        </header>
+
+        <section>
+            <h3>專業技能 SKILLS</h3>
+            <div class="skills">
+                <span>AutoCAD</span>
+                <span>SketchUp</span>
+                <span>3D 建模</span>
+                <span>空間規劃</span>
+                <span>手繪草圖</span>
+                <span>設計思考</span>
+            </div>
+        </section>
+
+        <section>
+            <h3>精選作品 PORTFOLIO</h3>
+            <div class="portfolio">
+                <div class="portfolio-item">住宅空間設計</div>
+                <div class="portfolio-item">商業環境模擬</div>
+                <div class="portfolio-item)燈光氛圍研究</div>
+                <div class="portfolio-item">材料材質板</div>
+            </div>
+        </section>
+
+        <section>
+            <h3>聯絡資訊 CONTACT</h3>
+            <p>期待能與您交流設計想法！</p>
+            <button onclick="showMessage()">點擊獲取詳細聯絡方式</button>
+            <p id="msg" style="margin-top:15px; font-weight:bold; color:var(--accent-color);"></p>
+        </section>
+    </div>
 </div>
-<footer>© 2026 AU114055014 Portfolio</footer>
+
+<footer>
+    <p style="text-align: center; color: #bbb; padding: 20px;">© 2026 AU114055014 Portfolio</p>
+</footer>
+
 <script>
 function showMessage(){
-  document.getElementById("msg").innerHTML =
-  "感謝你的關注！請透過 Email 與我聯絡。";
+  document.getElementById("msg").innerHTML = "感謝關注！歡迎透過 Email 與我進一步洽談。";
 }
-
-// 如果照片不存在，保留圓形空白，不破版
 document.getElementById("profilePic").onerror = function(){
-    this.src = ""; // 空白顯示
+    this.style.display = "inline-block";
+    this.src = "https://via.placeholder.com/180?text=Photo"; 
 };
 </script>
+
 </body>
 </html>
