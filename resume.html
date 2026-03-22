@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>個人履歷 | AU114055014</title>
+<style>
+body{
+    margin:0;
+    font-family: "Noto Sans TC", sans-serif;
+    background:#f5f5f5;
+    color:#333;
+}
+header{
+    background:#111;
+    color:white;
+    padding:40px;
+    text-align:center;
+}
+/* 履歷照片 */
+.profile-photo {
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid white;
+    margin-bottom:15px;
+    background-color:#444; /* 空白圓形底色 */
+    display:inline-block;
+}
+header h1{
+    margin:0;
+    font-size:36px;
+}
+header p{
+    opacity:0.8;
+}
+.container{
+    width:90%;
+    max-width:1000px;
+    margin:auto;
+}
+section{
+    margin:50px 0;
+}
+h2{
+    border-left:6px solid #333;
+    padding-left:10px;
+}
+.card{
+    background:white;
+    padding:20px;
+    margin-top:15px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+.skills span{
+    display:inline-block;
+    background:#222;
+    color:white;
+    padding:6px 12px;
+    margin:5px;
+    border-radius:20px;
+    font-size:14px;
+}
+.portfolio{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+}
+.portfolio div{
+    background:#ddd;
+    height:150px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:10px;
+    font-size:14px;
+}
+button{
+    background:#111;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:6px;
+    cursor:pointer;
+}
+button:hover{
+    background:#444;
+}
+footer{
+    text-align:center;
+    padding:30px;
+    color:#777;
+}
+</style>
+</head>
+<body>
+<header>
+  <!-- 安全照片區域 -->
+  <img id="profilePic" class="profile-photo" src="photo.jpg" alt="林潘芮芊 照片">
+  <h1>個人履歷</h1>
+  <p>亞洲大學 室內設計學系 | 學號 AU114055014</p>
+</header>
+<div class="container">
+<section>
+  <h2>基本資料</h2>
+  <div class="card">
+    <p><b>姓名：</b>林潘芮芊</p>
+    <p><b>學校：</b>亞洲大學 室內設計學系</p>
+    <p><b>學號：</b>AU114055014</p>
+    <p><b>Email：</b>rachel.pan2007@gmail.com</p>
+    <p><b>電話：</b>09xx-xxx-xxx</p>
+  </div>
+</section>
+<section>
+  <h2>關於我</h2>
+  <div class="card">
+    <p>我是亞洲大學室內設計系學生，對空間設計與美感規劃有濃厚興趣。
+    喜歡從生活觀察中尋找靈感，並將設計與使用者體驗結合。
+    未來希望能在室內設計或空間規劃領域持續發展。
+    </p>
+  </div>
+</section>
+<section>
+  <h2>技能</h2>
+  <div class="card skills">
+    <span>AutoCAD</span>
+    <span>SketchUp</span>
+    <span>3D建模</span>
+    <span>空間設計</span>
+    <span>手繪草圖</span>
+    <span>設計思考</span>
+  </div>
+</section>
+<section>
+  <h2>作品集</h2>
+  <div class="portfolio">
+    <div>作品 1</div>
+    <div>作品 2</div>
+    <div>作品 3</div>
+    <div>作品 4</div>
+  </div>
+</section>
+<section>
+  <h2>聯絡我</h2>
+  <div class="card">
+    <p>如果對我的作品有興趣，歡迎聯絡我。</p>
+    <button onclick="showMessage()">點擊聯絡</button>
+    <p id="msg"></p>
+  </div>
+</section>
+</div>
+<footer>© 2026 AU114055014 Portfolio</footer>
+<script>
+function showMessage(){
+  document.getElementById("msg").innerHTML =
+  "感謝你的關注！請透過 Email 與我聯絡。";
+}
+
+// 如果照片不存在，保留圓形空白，不破版
+document.getElementById("profilePic").onerror = function(){
+    this.src = ""; // 空白顯示
+};
+</script>
+</body>
+</html>
