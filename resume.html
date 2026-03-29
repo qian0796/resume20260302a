@@ -22,6 +22,7 @@
         line-height: 1.6;
     }
 
+
     /* 仿範例圖的非對稱裝飾背景 */
     .bg-shape {
         position: fixed;
@@ -170,6 +171,11 @@
 </head>
 <body>
 
+<audio id="bgm" autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+    您的瀏覽器不支援音樂播放。
+</audio>
+
 <div class="bg-shape"></div>
 
 <div class="main-wrapper">
@@ -212,7 +218,7 @@
             <div class="portfolio">
                 <div class="portfolio-item">住宅空間設計</div>
                 <div class="portfolio-item">商業環境模擬</div>
-                <div class="portfolio-item)燈光氛圍研究</div>
+                <div class="portfolio-item">燈光氛圍研究</div>
                 <div class="portfolio-item">材料材質板</div>
             </div>
         </section>
@@ -237,18 +243,7 @@
 <!--音樂來源 suno.ai-->
 
 <script>
-  const audio = document.getElementById("bgm");
-
-  // 嘗試直接播放
-  audio.play().catch(() => {
-    // 若被擋，快速解除靜音再播放
-    audio.muted = true;
-    audio.play();
-
-    setTimeout(() => {
-      audio.muted = false;
-    }, 100);
-  });
+    
 
 function showMessage(){
   document.getElementById("msg").innerHTML = "感謝關注！歡迎透過 Email 與我進一步洽談。";
