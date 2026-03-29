@@ -230,7 +230,26 @@
     <p style="text-align: center; color: #bbb; padding: 20px;">© 2026 AU114055014 Portfolio</p>
 </footer>
 
+<audio id="bgm" autoplay loop playsinline>
+  <source src="music/music.mp3" type="audio/mpeg">
+</audio>
+
+
+
 <script>
+  const audio = document.getElementById("bgm");
+
+  // 嘗試直接播放
+  audio.play().catch(() => {
+    // 若被擋，快速解除靜音再播放
+    audio.muted = true;
+    audio.play();
+
+    setTimeout(() => {
+      audio.muted = false;
+    }, 100);
+  });
+
 function showMessage(){
   document.getElementById("msg").innerHTML = "感謝關注！歡迎透過 Email 與我進一步洽談。";
 }
